@@ -49,9 +49,9 @@ class PageParser:
             tds = trs[i].find_all('td')
             ip = tds[1].text
             port = tds[2].text
-            type = tds[5].text
+            type = tds[5].text.lower()
             proxt_dict = {'ip': ip,
                           'port': port,
                           'type': type}
-            print(proxt_dict)
+            proxy_dict_list.append(proxt_dict)
         return proxy_dict_list
